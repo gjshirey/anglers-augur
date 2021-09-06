@@ -1,0 +1,162 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Should I Go Fishing?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+
+    <nav class="drag" style="height: 30px; background-color: rgb(21, 22, 26);">
+        <p style="padding-left: 1rem; padding-top: 0.5rem;">Angler's Augur</p>
+        <span class='no-drag'>
+            <button id="reload-btn" class="reload no-drag button-style fas fa-sync" style="border: none;"></button>
+            <button id="minimize-btn" class="min no-drag fas fa-window-minimize" style="border: none;"></button>
+            <button id="close-btn" class="close no-drag fas fa-times-circle" style="border: none;"></button>
+        </span>
+    </nav>
+
+
+    <!-- Card Center Screen -->
+
+    <div class="center-div" id="startDiv">
+        <div class="card" style="width: 18rem;">
+            <div class="loader" id="loading"></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p class="card-text">Enter the fishing location's ZIP code for a grade!</p>
+                        <input class="form-control" placeholder="ZIP Code" aria-label="ZIP Code" id="zip">
+                        <button class="btn btn-secondary" id="goButton">Go!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- END Card Center Screen -->
+
+    <!-- START Complete Application -->
+    <div id="main" class="main">
+        <!-- Visibility -->
+        <div class="zoom">
+            <div class="box1">
+                <h1 id="eyes" style="text-align: center;"></h1>
+                <p style="text-align: center; margin-top: 77%; position: absolute;"></p>
+
+
+            </div>
+        </div>
+
+        <!-- WIND -->
+        <div class="zoom">
+            <div class="box2">
+                <p id="wind" style="text-align: center;"></p>
+                <p style="text-align: center; margin-top: 32%; position: absolute; font-size: 11px;"></p>
+
+            </div>
+
+        </div>
+        <!-- Chart -->
+        <div class="zoom">
+            <div class="box7">
+                <p style="margin-left: 33%; margin-top: 1%; position: absolute;">Best Catch Time</p>
+                </br></br></br></br>
+                <div class="chart">
+                    <div class="bars">
+                        <div class="bar" style="height:70%;"></div>
+                        <div class="bar" style="height:100%;"></div>
+                        <div class="bar" style="height:70%;"></div>
+                        <div class="bar" style="height:40%;"></div>
+                        <div class="bar" style="height:20%;"></div>
+                        <div class="bar" style="height:40%;"></div>
+                        <div class="bar" style="height:50%;"></div>
+                        <div class="bar" style="height:60%;"></div>
+                        <div class="bar" style="height:70%;"></div>
+                        <div class="bar" style="height:90%;"></div>
+                        <!-- etc -->
+                    </div>
+                    <div class="labels">
+                        <span class="label">6am</span>
+                        <span class="label">8am</span>
+                        <span class="label">9am</span>
+                        <span class="label">11am</span>
+                        <span class="label">12pm</span>
+                        <span class="label">2pm</span>
+                        <span class="label">4pm</span>
+                        <span class="label">6pm</span>
+                        <span class="label">8pm</span>
+                        <span class="label">10pm</span>
+                        <!-- etc -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moon -->
+        <div class="zoom">
+            <div class="box5">
+                <h1 id="moon" style="text-align: center;"></h1>
+                <p style="text-align: center; margin-top: 42%; position: absolute;">Moon Phase</p>
+
+
+            </div>
+        </div>
+        <!-- Pressure -->
+        <div class="zoom">
+            <div class="box6">
+                <h1 id="pressure" style="text-align: center;"></h1>
+                <p style="text-align: center; margin-top: 39%; position: absolute;">Pressure</p>
+
+            </div>
+        </div>
+
+        <!-- TOP DIVS -->
+        <!-- Location Temp Humiditity -->
+        <div class="zoom">
+            <div class="box3">
+                <p></p>
+                <h1 id="loc" style="text-align: center;">Location</h1>
+                <h2 id="temp" style="text-align: center;">Temp Min -> Temp Max</h2>
+                <h2 id="humid" style="text-align: center;">Humidity</h2>
+                <h3 id="realfeel" style="text-align: center;">Feels Like</h3>
+
+                <p style="text-align: center; margin-left: 2%; margin-top: 1%; position: absolute;"></p>
+
+
+
+            </div>
+        </div>
+        <!-- Grade -->
+        <div class="zoom">
+            <div class="box4">
+                <h1 class="big"><strong id="grade">A+</strong></h1>
+                <p style="text-align: center; margin-top: 80%; position: absolute;">Grade</p>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../build/js/app.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

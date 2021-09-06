@@ -1,0 +1,405 @@
+.drag {
+    -webkit-app-region: drag;
+}
+
+.no-drag {
+    -webkit-app-region: no-drag;
+}
+
+.big {
+    opacity: 0;
+    text-align: center;
+    animation: grow 2.5s linear forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        transform: scale(7);
+        -webkit-filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+    }
+}
+
+.moon {
+    height: 70px;
+    width: 70px;
+}
+
+body {
+    background: #373940;
+    color: white;
+    font: 1.1rem Inconsolata, monospace;
+    overflow: hidden;
+}
+
+.card {
+    background: #1f2024;
+}
+
+.card-text {
+    color: white;
+    text-align: center;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 0px;
+}
+
+.reload {
+    position: fixed;
+    margin-top: -2.5rem;
+    margin-left: 90%;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    background-color: rgb(153, 255, 0);
+    border-radius: 12px
+}
+
+.min {
+    position: fixed;
+    margin-top: -2.5rem;
+    margin-left: 93%;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    background-color: yellow;
+    border-radius: 12px
+}
+
+.close {
+    position: fixed;
+    margin-top: -2.5rem;
+    margin-left: 96%;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    background-color: red;
+    border-radius: 12px;
+}
+
+.center-div {
+    justify-content: center;
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 32%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#goButton {
+    margin-top: 10%;
+    margin-left: 38%;
+}
+
+/* MAIN
+ CSS
+ HERE */
+.main {
+    display: none;
+}
+
+
+/***********************************
+************************************
+************************************
+**   THIS SECTION IS FOR BOXES    **
+************************************
+************************************
+***********************************/
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover{
+    transform: scale(1.05);
+}
+
+@keyframes new-item-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-400px);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.box1 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 200px;
+    margin: 1rem;
+    margin-top: 43%;
+    position: fixed;
+    width: 250px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+.box1 {
+    opacity: 0;
+    animation: new-item-animation .5s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+.box2 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 100px;
+    margin: 1rem;
+    margin-top: 29%;
+    position: fixed;
+    width: 250px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+.box2 {
+    opacity: 0;
+    animation: new-item-animation .7s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+.box3 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 212px;
+    margin: 1rem;
+    margin-top: 1%;
+    position: fixed;
+    width: 500px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.box3 {
+    opacity: 0;
+    animation: new-item-animation .6s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+
+.box4 {
+    /* FISHING GRADE */
+    background: #1f2024;
+    border-radius: 2px;
+    height: 212px;
+    margin: 1rem;
+    margin-top: 1%;
+    margin-left: 67%;
+    position: fixed;
+    width: 250px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    display: flex;
+        justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+.box4 {
+    opacity: 0;
+    animation: new-item-animation .7s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+
+.box5 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 100px;
+    margin: 1rem;
+    margin-top: 29%;
+    margin-left: 35%;
+    position: fixed;
+    width: 238px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+.box5 {
+    opacity: 0;
+    animation: new-item-animation .4s linear forwards;
+    animation-timing-function: ease;
+
+}
+
+.box6 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 100px;
+    margin: 1rem;
+    margin-top: 29%;
+    margin-left: 67%;
+    position: fixed;
+    width: 250px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+.box6 {
+    opacity: 0;
+    animation: new-item-animation .8s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+.box7 {
+    background: #1f2024;
+    border-radius: 2px;
+    height: 200px;
+    margin: 1rem;
+    margin-top: 43%;
+    margin-left: 35%;
+    position: fixed;
+    width: 505px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.box7 {
+    opacity: 0;
+    animation: new-item-animation .9s linear forwards;
+    animation-timing-function: ease;
+}
+
+
+
+/***********************************
+************************************
+******                       *******
+**       LOADING SPINNER          **
+******                      *******
+************************************
+***********************************/
+.loader {
+    width: 84px;
+    height: 84px;
+    position: relative;
+    right: -100px;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #FFF;
+    transform: translate(-50%, -100%) scale(0);
+    animation: push 2s infinite linear;
+}
+
+.loader:after {
+    animation-delay: 1s;
+}
+
+@keyframes push {
+
+    0%,
+    50% {
+        transform: translate(-50%, 0%) scale(1)
+    }
+
+    100% {
+        transform: translate(-50%, -100%) scale(0)
+    }
+}
+
+
+
+
+/*
+*
+*   CHART
+*   https://greatrexpectations.com/2018/11/22/lightweight-bar-chart-in-vanilla-css
+*   
+*   
+*/
+
+
+.chart {
+    height: 120px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+@keyframes grow-column {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bars {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.bar {
+    flex: 1;
+    border-radius: 10px 10px 0 0;
+    background: rgba(98, 144, 200, 1);
+    border: 5px solid rgba(55, 105, 150, 1);
+    border-bottom: none;
+    margin: 0 15px;
+    animation: grow-column 4s;
+}
+
+.labels {
+    display: flex;
+    flex-direction: row;
+}
+
+.label {
+    flex: 1;
+    padding: 3px;
+    text-align: center;
+}

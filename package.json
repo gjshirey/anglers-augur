@@ -1,0 +1,69 @@
+{
+  "name": "fishingapp",
+  "version": "0.0.1",
+  "description": "Fishing app that grades whether or not its a good day to go fishing",
+  "main": "main.js",
+  "dependencies": {
+    "@popperjs/core": "^2.9.3",
+    "bootstrap-icons": "^1.5.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@electron-forge/cli": "^6.0.0-beta.59",
+    "@electron-forge/maker-deb": "^6.0.0-beta.59",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.59",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
+    "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^5.1.0",
+    "css-loader": "^6.2.0",
+    "electron": "^13.2.3",
+    "electron-reload": "^2.0.0-alpha.1",
+    "postcss-loader": "^6.1.1",
+    "sass": "^1.38.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "scripts": {
+    "watch": "webpack --config webpack.common.js --watch",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Galen Shirey",
+  "license": "ISC",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "fishingapp"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
