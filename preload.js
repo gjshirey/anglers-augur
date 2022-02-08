@@ -5,9 +5,6 @@ const { ipcRenderer, contextBridge} = require('electron')
 // It has the same sandbox as a Chrome extension.
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('info').addEventListener('click', () => {
-    ipcRenderer.invoke('info')
-  })
   document.getElementById('minimize-btn').addEventListener('click', () => {
     ipcRenderer.invoke('minimize')
   })

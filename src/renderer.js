@@ -29,7 +29,7 @@ button.addEventListener('click', () => {
   //***************************************************************/
   getWeatherData().then(weatherData => {
     mainDiv.style.display = 'block'
-
+    
     //Box 3 - Top Left
     document.getElementById('loc').innerHTML = `<h1>${weatherData.name}</h1>`
     document.getElementById('temp').innerHTML = `<h2>${Math.floor(((weatherData.main.temp - 273.15) * 1.8) + 32)}℉</h2>`;
@@ -52,13 +52,14 @@ button.addEventListener('click', () => {
     //Box 6 - Middle Right
     document.getElementById('pressure').innerHTML = `<h1>${weatherData.main.pressure} Milibar</h1>`
 
-
+    
     //Box 4 - Grade Top Right Shouldve put everthing in their own varables good luck reading this
+    let moon = getMoonPhase(year, month, day)
     document.getElementById('grade').innerHTML = `<strong class = "grade">${getGrade(weatherData.main.pressure, moon,
       weatherData.weather[0].main, weatherData.main.humidity, Math.floor(((weatherData.main.temp - 273.15) * 1.8) + 32), weatherData.wind.speed)}</strong>`
   }).catch((error) => {
     console.error(error);
-    location.reload();
+    //location.reload();
   })
 })
 
@@ -95,10 +96,10 @@ function getGrade(pressure, moon, weather, humidity, temp, wind) {
 
   /*weather*/
   if (weather == "Rain") {
-    score = score - 1
+    score = score - 3
   }
   else if (weather == "Clear") {
-    score = score + 1
+    score = score + 2
   }
   else if (weather == "Clouds") {
     score = score + 2
@@ -135,7 +136,7 @@ function getGrade(pressure, moon, weather, humidity, temp, wind) {
     score = score + 1
   }
   else {
-    score = score - 3
+    score = score - 5
   }
 
 
