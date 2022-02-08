@@ -19,7 +19,7 @@ button.addEventListener('click', () => {
 
   const getWeatherData = async () => {
     console.log("Processing.....")
-    const request = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${info},us&appid=7cfdc4fe0d1fcfba2e0b3510a296aa86`)
+    const request = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${info},us&appid=`)
     const data = await request.json();
     return data;
   }
